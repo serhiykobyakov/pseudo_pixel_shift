@@ -7,7 +7,7 @@ My motivation at the moment is based on two desires:
 * get more megapixels from my cellphone camera (it is irrational, I know, please don't question this aspect)
 * do the above using what I already have with no additional investments in licenses and hardware
 
-Nowadays we have a lot of cameras using [pixel shift technology](https://en.wikipedia.org/wiki/Pixel_shift), some of them have pixel shift handheld mode. And I think the number of those will grow with time. But New camera is always an investment, and who needs new camera nowadays if 10 year camera do a pretty good job of making a good quality pictures?  How about using your smartphone if you use one? It has a camera already, so... you don't have to get your camera all the time (but you can surely use one with even better results!).
+Nowadays we have a lot of cameras using [pixel shift technology](https://en.wikipedia.org/wiki/Pixel_shift). Some of the cameras even have a handheld pixel shift mode (!!!). And I think the number of those will grow with time. But a new camera is always an investment, and who needs new camera nowadays if a 10 years old camera do a pretty good job of making good quality pictures?  How about using your smartphone if you use one? It has a camera already, so... you don't have to get your camera all the time (but you can surely use one with even better results!).
 
 Is there a cheaper way to get a pixel shift? Yes! There is!
 
