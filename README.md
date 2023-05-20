@@ -1,4 +1,4 @@
-# Pseudo pixel shift
+# Superresolution
 using your cell phone camera
 
 ## Motivation and project scope
