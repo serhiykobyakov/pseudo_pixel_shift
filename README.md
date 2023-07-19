@@ -40,7 +40,7 @@ It is important to take care of some settings on smartphone:
 
 ## Installation
 
-Install Python 3.
+Install Python 3.\
 Put scripts into filder which is in your PATH list.
 
 ## Algorithm
