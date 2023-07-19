@@ -38,6 +38,16 @@ It is important to take care of some settings on smartphone:
 * use native camera resolution for output images
 * use fastest possible burst mode during shooting
 
+## Algorithm
+
+Point your cellphone camera at the scene you want to capture while holding your camera in hands. Don't use tripod!.\ Hold your camera as still as it is possible.\
+Capture as many images as it is possible.\ Use jpeg format to save images, use the best quality possible in settings.\ 50 images and avove is enough for single scene.\
+Copy your images on your PC, separate each scene in individual folders so in each folder you have a stack of images (images of the same scene).
+check for blurred images in folder using command:
+```
+stack_sharp_check.py *.jpg
+```
+The script will separate sharp images from a blurred ones by adding ".not_sharp_enough" to the latter.
 
 
 ## Results
