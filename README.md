@@ -38,6 +38,11 @@ It is important to take care of some settings on smartphone:
 * use native camera resolution for output images
 * use fastest possible burst mode during shooting
 
+## Installation
+
+Install Python 3.
+Put scripts into filder which is in your PATH list.
+
 ## Algorithm
 
 Point your cellphone camera at the scene you want to capture while holding your camera in hands. Don't use tripod!.\ Hold your camera as still as it is possible.\
