@@ -49,8 +49,10 @@ Put scripts into filder which is in your PATH list.
 Point your cellphone camera at the scene you want to capture while holding your camera in hands. Don't use tripod!. Hold your camera as still as it is possible. Capture as many images as it is possible. Use jpeg format to save images, use the best quality possible in settings. 50 images and above is enough for single scene.
 
 2. Copy your images on your PC, separate each scene in individual folders so in each folder you have a stack of images (images of the same scene). Check for blurred images in folder using command:
-   ```stack_sharp_check.py *.jpg```
-The script will separate sharp images from a blurred ones by adding ".not_sharp_enough" to the latter.
+   ```
+   stack_sharp_check.py *.jpg
+   ```
+   The script will separate sharp images from a blurred ones by adding ".not_sharp_enough" to the latter.
 
 4. Upscale images 2x in size and save them into 16-bit tiffs:
    ```
