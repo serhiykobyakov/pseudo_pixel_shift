@@ -31,17 +31,18 @@ On the highest level it is a two-step process:
 
 Shooting jpegs is be the most convenient way of getting images out of camera since the camera can take care of white balace, exposition and even HDR processing of the output images. Contemporary cameras are really great with this, so in postprocessing you'll need to make a subtle corrections. Yes, jpegs are 8-bit images and raws can deliver more bits, but using raw requires extra memory and CPU time in later postprocessing. There are pros and cons in both approaches, but let me focus on jpegs here.
 
-It is important to take care of some settings on smartphone:
+## Camera settings and software installation
+
+It is important to take care about some settings on smartphone:
 * switch noise reduction off (noise reduction smoothes out subtle details which we are interested in)
 * switch image sharping off (sharping causes artifacts and we don't want it)
 * set image quality to 100% (you'll get heavy images but we need as much quality as we can get)
 * use native camera resolution for output images
 * use fastest possible burst mode during shooting
 
-## Installation
-
-Install Python 3.\
-Put scripts into filder which is in your PATH list.
+On your PC:
+* install Python 3
+* put scripts into filder which is in your PATH list so you can use them
 
 ## How it works
 
@@ -60,3 +61,17 @@ Point your cellphone camera at the scene you want to capture while holding your 
 
 
 ## Results
+
+## Some thoughts
+
+### Sharpness estimation (stack_sharp_check.py)
+Laplacian variance of image is a good estimator of image sharpness. It works perfectly on clean images. Unfortunately, digital noise also affects the variance directly. The more noise - the larger the variance. At some point (large noise, high ISO values) noise contribution to the variance becomes larger than the sharpness of the image.
+
+It is not a trivial task to distinguish which part of the laplacian variance is due to image sharpness and which is due to noise. For now I haven't find a reasonable solution to this problem.
+
+To supress the noise contribution to the laplacian variance I use iso-calibrated noise reduction prior to the variance estimation. It doesn't eliminate the problem completely but it works surprisingly well, so I trust the script with separating blurred images from sharp ones.
+
+The iso calibration is simply the sigma estimation which is used to denoise image. I made it empirically for my LG V30 camera's images, so if you have better camera - you may need to correct the sigma estimation routine.
+
+
+
