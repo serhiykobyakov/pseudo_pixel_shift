@@ -27,9 +27,9 @@ There is [well known article which describes how to get superresolution images](
 
 On the highest level it is a two-step process:
 * get a lot of images using smartphone
-* process them using PC
+* average them using PC
 
-Shooting jpegs would be the most convenient way of getting images out of camera since the camera can take care of white balace, exposition and even HDR processing of the output images. This means less postprocesing work later. Contemporary cameras are really great with this, so in postprocessing you'll need to make a really cosmetic actions. Yes, jpegs are 8-bit images and raws can deliver more bits, but shooting raw means more postprocessing later. There are pros and cons in both approaches, but let me focus on jpegs here.
+Shooting jpegs is be the most convenient way of getting images out of camera since the camera can take care of white balace, exposition and even HDR processing of the output images. Contemporary cameras are really great with this, so in postprocessing you'll need to make a subtle corrections. Yes, jpegs are 8-bit images and raws can deliver more bits, but using raw requires extra memory and CPU time in later postprocessing. There are pros and cons in both approaches, but let me focus on jpegs here.
 
 It is important to take care of some settings on smartphone:
 * switch noise reduction off (noise reduction smoothes out subtle details which we are interested in)
