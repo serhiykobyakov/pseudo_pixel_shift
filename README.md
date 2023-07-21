@@ -66,6 +66,8 @@ Point your cellphone camera at the scene you want to capture while holding your 
 
 ## Results
 
+
+
 ## Some final thoughts
 
 #### Sharpness estimation (stack_sharp_check.py)
