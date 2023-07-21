@@ -33,7 +33,7 @@ Shooting jpegs is be the most convenient way of getting images out of camera sin
 
 ## Camera settings and software installation
 
-It is important to take care about some settings on smartphone:
+It is important to take care about some camera settings on smartphone:
 * switch noise reduction off (noise reduction smoothes out subtle details which we are interested in)
 * switch image sharping off (sharping causes artifacts and we don't want it)
 * set image quality to 100% (you'll get heavy images but we need as much quality as we can get)
