@@ -42,6 +42,7 @@ It is important to take care about some camera settings on smartphone:
 
 On your PC:
 * install Python 3
+* install hugin (we only need fulla and tca_correct available in command line)
 * put scripts into filder which is in your PATH list so you can use them
 
 ## How it works
@@ -61,6 +62,10 @@ Point your cellphone camera at the scene you want to capture while holding your 
 
 5. Upscale images 2x in size and save them into 16-bit tiffs:
    ```
+   ```
+6. Correct images for transverse chromatic aberration (TCA) if it is necessary:
+   ```
+   tca_corr.py -inplace *.tif
    ```
 
 
