@@ -66,9 +66,9 @@ Point your cellphone camera at the scene you want to capture while holding your 
 
 ## Results
 
-## Some thoughts
+## Some final thoughts
 
-### Sharpness estimation (stack_sharp_check.py)
+#### Sharpness estimation (stack_sharp_check.py)
 Laplacian variance of image is a good estimator of image sharpness. It works perfectly on clean images. Unfortunately, digital noise also affects the variance directly. The more noise - the larger the variance. At some point (large noise, high ISO values) noise contribution to the variance becomes larger than the sharpness of the image.
 
 It is not a trivial task to distinguish which part of the laplacian variance is due to image sharpness and which is due to noise. For now I haven't find a reasonable solution to this problem.
