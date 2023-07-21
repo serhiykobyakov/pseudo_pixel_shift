@@ -55,9 +55,11 @@ Point your cellphone camera at the scene you want to capture while holding your 
    ```
    The script will separate sharp images from a blurred ones by adding ".not_sharp_enough" to the latter.
 
-3. Decide which image will be used to training (the first image to which all the rest will be corrected). The image must not cointain distracted objects ob the foreground such as pedestrains or cars passing on)
+3. Decide which image will be used to training (the first image to which all the rest will be corrected). The image must not cointain distracted objects ob the foreground such as pedestrians or cars passing on). If it is not the first image in the folder sorted by the filename - rename it so it is the first.
 
-4. Upscale images 2x in size and save them into 16-bit tiffs:
+4. You may also make a mask (mask.png) - transparent (with alpha channel on) png image where moving objects are masked using red color. IT can be easily done using gimp: open your first image in gimp, create new layer with alpha channel on top of the image and paint with red color on trees, cars and pedestrians - every objects which can chage their positions from image to image. Save only the upper transparent layer with mask as "mask.png" to the folder with images.
+
+5. Upscale images 2x in size and save them into 16-bit tiffs:
    ```
    ```
 
