@@ -55,6 +55,8 @@ Point your cellphone camera at the scene you want to capture while holding your 
    ```
    The script will separate sharp images from a blurred ones by adding ".not_sharp_enough" to the latter.
 
+3. Decide which image will be used to training (the first image to which all the rest will be corrected). The image must not cointain distracted objects ob the foreground such as pedestrains or cars passing on)
+
 4. Upscale images 2x in size and save them into 16-bit tiffs:
    ```
    ```
