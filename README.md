@@ -2,12 +2,12 @@
 using your cell phone camera and free software
 ---
 
+Superresolution is an image manipulation technique which allow to improve the image quality (increase resolution, decrease noise level) in comparison to the image camera produce. In general, there are two ways we can get a superresolution: use AI on single image or average a stack of multiple images. This project uses the latter approach.
+
 Some technical background is necessary to use this software. And also you'll need:
 * smartphone with camera
 * PC with Linux (or Windows if you can adapt the scripts for this OS)
 * Imagemagick, Python (along with OpenCV) installed
-
-Superresolution is an image manipulation technique which allow to improve the image quality (increase resolution, decrease noise level) in comparison to the image camera produce. In general, there are two ways we can get a superresolution: use AI on single image or average a stack of multiple images. This project uses the latter approach.
 
 Before we go into details, there are merits and demerits of the superresolution technique:
 
