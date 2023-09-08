@@ -63,6 +63,7 @@ Point your cellphone camera at the scene you want to capture while holding your 
 
 5. Upscale images 2x in size and save them into 16-bit tiffs:
    ```
+   jpg2largetif.py *.jpg
    ```
 6. Correct images for transverse chromatic aberration (TCA) if it is necessary:
    ```
