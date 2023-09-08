@@ -1,8 +1,13 @@
 #!/usr/bin/python3
+#
+# Version: 2023.09.08
+# Author: Serhiy Kobyakov
+
 
 import os
 import sys
 import subprocess
+# import multiprocessing as mp
 
 
 def print_usage():
@@ -44,6 +49,11 @@ def convert_to_ltif(jpg_file):
 
 
 if __name__ == "__main__":
+    # if mp.cpu_count() > 2:
+    #     nproc = round(mp.cpu_count() * 3 / 4)
+    # else:
+    #     nproc = 2
+    # print('  threads in use:', nproc, 'of', mp.cpu_count())
 
     jpg_files = []
 
@@ -64,3 +74,21 @@ if __name__ == "__main__":
             convert_to_ltif(jpg_file)
 
         print('done')
+
+    # # start monitoring memory usage
+    # # cmd = "cat /proc/meminfo | grep 'MemAvailable' > stack_align_mem.log; while true; do cat /proc/meminfo | grep 'MemFree' >> stack_align_mem.log; echo; sleep 1; done"
+    # cmd = "cat /proc/meminfo | grep 'MemAvailable' > jpg2largetif_mem.log; while true; do cat /proc/meminfo | grep 'MemFree' >> jpg2largetif_mem.log; sleep 1; done"
+    # p = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
+    #
+    # jpg_filepaths = glob.iglob(os.path.join('.', "*.jpg"))
+    # print(f"Converting {len(list(jpg_filepaths))} images..", end='')
+    #
+    # jpg_filepaths = glob.iglob(os.path.join('.', "*.jpg"))
+    # pool = mp.Pool(processes=nproc)
+    # pool.map(convert_to_ltif, jpg_filepaths)
+    # pool.close()
+    # pool.join()
+    # print('done')
+    #
+    # # stop monitoring memory usage
+    # p.terminate()
