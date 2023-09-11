@@ -46,7 +46,16 @@ On your PC:
 * install hugin (we only need fulla and tca_correct available in command line)
 * put scripts into folder which is in your PATH list so you can use them
 
-## How it works
+## Algorithm in general
+
+1. Make few tenth of images shooting the same scene
+2. Upscale images
+3. Align them according to the first one
+4. Average aligned images into the final result
+
+There is already a program which can do the alignment: [align_image_stack](https://wiki.panotools.org/Align_image_stack) from Hugin repository. Unfortunately it aligns images in pairs: first to second, second to third and so on. From my experience, this kind of alignment doesn't work well for superresolution when there are few tenth of images to align. align_image_stack works perfectly for partially overlapped images when we dealing with panoramas stitching. The only way of alignment for superresolution is to align all images to the first one.
+
+## How everything works here
 
 1. Get few tenth of images shooting the same scene.
 Point your cellphone camera at the scene you want to capture while holding your camera in hands. Don't use tripod!. Hold your camera as still as it is possible. Capture as many images as it is possible. Use jpeg format to save images, use the best quality possible in settings. 50 images and above is enough for single scene.
@@ -83,6 +92,12 @@ Point your cellphone camera at the scene you want to capture while holding your 
 
 
 ## Results
+
+
+## TODO
+
+* Since assembling superresolution image is a single though multistage task it would be good to make a single class in one file implementing the whole project
+* I am not satisfied with the subpixel alignment, the algorithm needs improvement
 
 
 
