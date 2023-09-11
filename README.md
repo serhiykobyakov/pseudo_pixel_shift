@@ -28,9 +28,29 @@ There is [well known article which describes how to get superresolution images](
 
 On the highest level it is a two step process:
 * get a lot of images using smartphone
-* average them using PC
+* align and average them using PC
 
-Shooting jpegs is be the most convenient way of getting images out of camera since the camera can take care of white balance, exposition and even HDR processing of the output images. Contemporary cameras are really great with this, so in post-processing you'll need to make a subtle corrections. Yes, jpegs are 8-bit images and raws can deliver more bits, but using raw requires extra memory and CPU time in later post-processing. There are pros and cons in both approaches, but let me focus on jpegs here.
+The first step is trivial (if you have a camera). There are no great and free software which can be used for the second.
+
+
+## Algorithm in general
+
+1. Make few tenth of images shooting the same scene
+2. Upscale images
+3. Align them according to the first one
+4. Average aligned images into the final result
+
+There is already a program which can do the alignment: [align_image_stack](https://wiki.panotools.org/Align_image_stack) from Hugin repository. Unfortunately it aligns images in pairs: first to second, second to third and so on. From my experience, this kind of alignment doesn't work well for superresolution when there are few tenth of images to align. align_image_stack works perfectly for partially overlapped images when we dealing with panoramas stitching. The only way of alignment for superresolution is to align all images to the first one.
+
+The alignment routine is the core of superresolution. The final result depends strongly on the precision of the subpixel images alignment. I'd say the subpixel alignment precision must be perfect, but as always in the real life it does not. There are several reasons for this:
+* imperfect precision of the keypoints detection (due to algorithm, image noise etc.)
+* imperfect keypoints matching
+* rolling shutter distortions - in handheld shooting they are subtle, but still present
+
+The first two reasons are software issues and they can be solved by careful and thoughtful implementing the alignment routine. The last one is a hardware problem which have two solution: better hardware or leaning your hands on something stable while shooting.
+
+In this project I'll try to solve the software part of the problem by tailoring alignment algorithm to the situation.
+
 
 ## Camera settings and software installation
 
@@ -46,19 +66,11 @@ On your PC:
 * install hugin (we only need fulla and tca_correct available in command line)
 * put scripts into folder which is in your PATH list so you can use them
 
-## Algorithm in general
 
-1. Make few tenth of images shooting the same scene
-2. Upscale images
-3. Align them according to the first one
-4. Average aligned images into the final result
-
-There is already a program which can do the alignment: [align_image_stack](https://wiki.panotools.org/Align_image_stack) from Hugin repository. Unfortunately it aligns images in pairs: first to second, second to third and so on. From my experience, this kind of alignment doesn't work well for superresolution when there are few tenth of images to align. align_image_stack works perfectly for partially overlapped images when we dealing with panoramas stitching. The only way of alignment for superresolution is to align all images to the first one.
-
-## How everything works here
+## Step by step
 
 1. Get few tenth of images shooting the same scene.
-Point your cellphone camera at the scene you want to capture while holding your camera in hands. Don't use tripod!. Hold your camera as still as it is possible. Capture as many images as it is possible. Use jpeg format to save images, use the best quality possible in settings. 50 images and above is enough for single scene.
+Point your cellphone camera at the scene you want to capture while holding your camera in your hands. Don't mount camera on tripod!. However, it would be great if you lean your hands on tripod or something stable (banister, wall etc.) Hold your camera as still as it is possible but be sure that there is slight position changes. Capture as many images as it is possible. Use jpeg format to save images, use the best quality possible in settings. 50 images and above is enough for single scene. Use burst mode to get a lot of images quickly.
 
 2. Copy your images on your PC, separate each scene in individual folders so in each folder you have a stack of images (images of the same scene). Check for blurred images in folder using command:
    ```
