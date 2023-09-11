@@ -40,7 +40,9 @@ The first step is trivial (if you have a camera). There are no great and free so
 3. Align them according to the first one
 4. Average aligned images into the final result
 
-There is already a program which can do the alignment: [align_image_stack](https://wiki.panotools.org/Align_image_stack) from Hugin repository. Unfortunately it aligns images in pairs: first to second, second to third and so on. From my experience, this kind of alignment doesn't work well for superresolution when there are few tenth of images to align. align_image_stack works perfectly for partially overlapped images when we dealing with panoramas stitching. The only way of alignment for superresolution is to align all images to the first one.
+There is already a program which can do the alignment: [align_image_stack](https://wiki.panotools.org/Align_image_stack) from Hugin repository. Unfortunately it does pairwise alignment: first to second, second to third and so on. This way of alignment is great for partially overlapped images which have to be stitched into a sigle, panoramic one. From my experience, this kind of alignment doesn't work well for superresolution. Pairwise alignment of a few tenth of images of the same scene leads to slight but constant shift between images so the last image is too far from the first. Such result does not worth further averaging because it can only lead to deterioration of small features present in source images.
+
+The only way of alignment for superresolution is to align all images to the first one.
 
 The alignment routine is the core of superresolution. The final result depends strongly on the precision of the subpixel images alignment. I'd say the subpixel alignment precision must be perfect, but as always in the real life it does not. There are several reasons for this:
 * imperfect precision of the keypoints detection (due to algorithm, image noise etc.)
